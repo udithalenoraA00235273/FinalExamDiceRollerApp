@@ -24,21 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton dice;
     private Random roll = new Random();
 
-    /* Variables for shared preferences */
-
-    private TextView resultOne;
-    private TextView resultTwo;
-    private TextView resultThree;
-
-    public static final String Shared_Preferences = "shared_prefs";
-    public static final String Text1 = "Result One";
-    public static final String Text2 = "Result Two";
-    public static final String Text3 = "Result Three";
-
-    private String TextOne;
-    private String TextTwo;
-    private String TextThree;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 userIp = Integer.valueOf(userInput.getText().toString());
                 rollDice(userIp);
-                saveData();
             }
         });
 
@@ -117,26 +101,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         alert.create().show();
-    }
-    private void saveData(){
-        SharedPreferences sharedPreferences = getSharedPreferences(Shared_Preferences,MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        editor.putString(Text1, userInput.getText().toString());
-        editor.putString(Text2, userInput.getText().toString());
-        editor.putString(Text3, userInput.getText().toString());
-    }
-
-    public void loadData(){
-        SharedPreferences sharedPreferences = getSharedPreferences(Shared_Preferences,MODE_PRIVATE);
-        TextOne = sharedPreferences.getString(Text1, "");
-        TextTwo = sharedPreferences.getString(Text2, "");
-        TextThree = sharedPreferences.getString(Text3, "");
-    }
-
-    public void updateData(){
-        userInput.setText(Text1);
-        userInput.setText(Text2);
-        userInput.setText(Text3);
     }
 }
