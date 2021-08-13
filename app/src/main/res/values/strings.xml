@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DiceRoller</string>
+    <string name="Topic">Welcome To The Dice Roller</string>
+    <string name="pre_defined">Pre Defined Dices</string>
+    <string name="touch">Touch on a Dice to roll</string>
+    <string name="customize">Customize Dice Roll</string>
+    <string name="value_enter">Enter a Value</string>
+    <string name="button">Roll</string>
+    <string name="results">Results History</string>
+    <string name="result1">Result One - </string>
+    <string name="result2">Result Two - </string>
+    <string name="result3">Result Three - </string>
+</resources>
