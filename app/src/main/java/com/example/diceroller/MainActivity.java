@@ -3,6 +3,7 @@ package com.example.diceroller;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -21,8 +22,12 @@ public class MainActivity extends AppCompatActivity {
     int userIp;
     EditText userInput;
     Button rollButton;
+    TextView resultOne;
     private ImageButton dice;
     private Random roll = new Random();
+    int result_one;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 userIp = Integer.valueOf(userInput.getText().toString());
                 rollDice(userIp);
+
+                result_one = Integer.valueOf(userInput.getText().toString());
+
+
             }
         });
 
